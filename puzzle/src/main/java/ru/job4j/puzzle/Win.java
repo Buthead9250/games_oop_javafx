@@ -13,10 +13,10 @@ public class Win {
     }
 
     public static boolean horizontal(int[][] board, int row) {
-        boolean hrsl = false;
+        boolean hrsl = true;
         for (int j = 0; j < board.length; j++) {
-            if (board[row][j] == 1) {
-                hrsl = true;
+            if (board[row][j] != 1) {
+                hrsl = false;
                 break;
             }
         }
@@ -24,10 +24,10 @@ public class Win {
     }
 
     public static boolean vertical(int[][] board, int column) {
-        boolean vrsl = false;
+        boolean vrsl = true;
         for (int j = 0; j < board.length; j++) {
-            if (board[j][column] == 1) {
-                vrsl = true;
+            if (board[j][column] != 1) {
+                vrsl = false;
                 break;
             }
         }
