@@ -37,12 +37,15 @@ public final class Logic {
     }
 
     private int findBy(Cell cell) throws FigureNotFoundException {
+        int rsl = -1;
         for (int index = 0; index != figures.length; index++) {
             Figure figure = figures[index];
             if (figure != null && figure.position().equals(cell)) {
-                return index;
+                rsl = index;
+            } else {
+                throw new FigureNotFoundException("Figure not found");
             }
         }
-        throw new FigureNotFoundException();
+        return rsl;
     }
 }
